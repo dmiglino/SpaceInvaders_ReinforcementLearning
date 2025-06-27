@@ -1,2 +1,2 @@
-model_checkpoint_path: "apr_g9_dqn_SpaceInvaders-v0_weights_1990000.h5f"
-all_model_checkpoint_paths: "apr_g9_dqn_SpaceInvaders-v0_weights_1990000.h5f"
+model_checkpoint_path: "best_model_weights.h5f"
+all_model_checkpoint_paths: "best_model_weights.h5f"
