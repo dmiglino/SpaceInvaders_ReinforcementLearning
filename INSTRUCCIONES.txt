@@ -1,0 +1,76 @@
+INSTRUCCIONES PARA SOLUCIONAR EL PROYECTO DE APRENDIZAJE POR REFUERZO
+=====================================================
+
+PROBLEMA:
+---------
+El notebook original (APR_Grupo_9.ipynb) tiene dos problemas:
+
+1. No se puede instalar atari-py correctamente
+2. Los parámetros de DQN no son óptimos para un buen aprendizaje
+
+SOLUCIÓN:
+---------
+
+OPCIÓN 1: USAR UN ENTORNO ALTERNATIVO (RECOMENDADO)
+--------------------------------------------------
+Si sigues teniendo problemas con la instalación de atari-py, usa esta opción:
+
+- Abre el notebook APR_Grupo_9_simple_env.ipynb
+- Este notebook usa CartPole-v1 en lugar de SpaceInvaders-v0
+- No requiere atari-py, solo el paquete gym básico
+- Incluye todos los parámetros optimizados para DQN
+- El objetivo es alcanzar 450 puntos en lugar de 20 (ajustado al nuevo entorno)
+
+OPCIÓN 2: INTENTAR ARREGLAR SPACE INVADERS
+-----------------------------------------
+
+1. PARA INSTALAR ATARI-PY:
+
+   Opción A - Usar el archivo batch con conda (RECOMENDADO):
+   - Haz doble clic en "instalar_atari_conda.bat"
+   - Espera a que termine la instalación
+   
+   Opción B - Usar el archivo batch con Python:
+   - Haz doble clic en "instalar_atari.bat"
+   - Espera a que termine la instalación
+
+   Opción C - Actualizar la celda de instalación:
+   - Abre el notebook APR_Grupo_9_fixed.ipynb
+   - Busca la celda de instalación (sección 1.4)
+   - Reemplaza su contenido con el código del archivo install_atari_cell.py
+   - Este código usa el fork de OpenAI de atari-py en lugar del fork de Kojoley
+
+2. PARA MEJORAR EL RENDIMIENTO DEL AGENTE:
+
+   - Usa el notebook APR_Grupo_9_fixed.ipynb que ya incluye todas las mejoras:
+     * WINDOW_LENGTH = 4 (permite percibir movimiento)
+     * Memoria = 50000 experiencias (antes 500)
+     * Exploración = 50000 pasos (antes 100)
+     * Entrenamiento = 50000 pasos (antes 1500)
+
+CÓMO USAR:
+----------
+
+OPCIÓN 1 (RECOMENDADA - CARTPOLE):
+1. Instala los paquetes básicos:
+   - Haz doble clic en "instalar_gym_basico.bat"
+   - O ejecuta manualmente: python instalar_gym_basico.py
+
+2. Abre y ejecuta el notebook con el entorno alternativo:
+   ```
+   jupyter notebook APR_Grupo_9_simple_env.ipynb
+   ```
+
+3. Ejecuta todas las celdas en orden.
+
+OPCIÓN 2 (SPACE INVADERS - SI LOGRAS INSTALAR ATARI-PY):
+1. Instala atari-py usando una de las opciones mencionadas arriba.
+
+2. Abre y ejecuta el notebook mejorado:
+   ```
+   jupyter notebook APR_Grupo_9_fixed.ipynb
+   ```
+
+3. Ejecuta todas las celdas en orden.
+
+NOTA: El entrenamiento tomará más tiempo que en la versión original, pero debería resultar en un rendimiento significativamente mejor, superando los puntos requeridos en cualquiera de los dos entornos.
